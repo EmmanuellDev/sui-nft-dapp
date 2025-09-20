@@ -1,92 +1,90 @@
-# Sui dApp Starter Template
+# 💎 Sui NFT DApp
 
-This dApp was created using `@mysten/create-dapp` that sets up a basic React
-Client dApp using the following tools:
+## Overview
+**Sui NFT DApp** is a decentralized application built on the **Sui Blockchain** using the **Move language**, created during a workshop held in Chennai. This dApp allows users to **mint, burn, transfer, and manage ownership of NFTs** seamlessly on the Sui network.  
 
-- [React](https://react.dev/) as the UI framework
-- [TypeScript](https://www.typescriptlang.org/) for type checking
-- [Vite](https://vitejs.dev/) for build tooling
-- [Radix UI](https://www.radix-ui.com/) for pre-built UI components
-- [ESLint](https://eslint.org/) for linting
-- [`@mysten/dapp-kit`](https://sdk.mystenlabs.com/dapp-kit) for connecting to
-  wallets and loading data
-- [pnpm](https://pnpm.io/) for package management
+The project leverages **@mysten/create-dapp** to set up a modern React-based frontend with TypeScript, Vite, and pre-built UI components, enabling a smooth and interactive user experience.
 
-For a full guide on how to build this dApp from scratch, visit this
-[guide](http://docs.sui.io/guides/developer/app-examples/e2e-counter#frontend).
+---
 
-## Deploying your Move code
+## 🎨 Features
 
-### Install Sui cli
+🟢 **Mint NFTs**  
+Users can create new NFTs and store them securely on the Sui blockchain.  
 
-Before deploying your move code, ensure that you have installed the Sui CLI. You
-can follow the [Sui installation instruction](https://docs.sui.io/build/install)
-to get everything set up.
+🔴 **Burn NFTs**  
+NFTs can be destroyed permanently by their owner, removing them from circulation.  
 
-This template uses `testnet` by default, so we'll need to set up a testnet
-environment in the CLI:
+🟡 **NFT Ownership**  
+Users maintain full ownership rights for minted NFTs, verifiable on-chain.  
 
-```bash
-sui client new-env --alias testnet --rpc https://fullnode.testnet.sui.io:443
-sui client switch --env testnet
-```
+🔵 **NFT Transfer**  
+Securely transfer NFTs to other users on the Sui blockchain.  
 
-If you haven't set up an address in the sui client yet, you can use the
-following command to get a new address:
+✅ **Interactive UI** – Built with React, Radix UI, and TypeScript  
+✅ **Wallet Integration** – Connect your wallet and manage NFTs with ease  
 
-```bash
-sui client new-address secp256k1
-```
+---
 
-This well generate a new address and recover phrase for you. You can mark a
-newly created address as you active address by running the following command
-with your new address:
+## 🛠️ Tech Stack
 
-```bash
-sui client switch --address 0xYOUR_ADDRESS...
-```
+**Frontend:**  
+- React.js – Core UI framework  
+- TypeScript – Static type checking  
+- Vite – Build tooling for fast development  
+- Radix UI – Pre-built UI components  
+- ESLint – Code linting and quality enforcement  
 
-We can ensure we have some Sui in our new wallet by requesting Sui from the
-faucet `https://faucet.sui.io`.
+**Blockchain / dApp Tools:**  
+- @mysten/dapp-kit – Wallet connection and on-chain data interaction  
+- Move Language – Smart contract programming for Sui blockchain  
+- Sui Blockchain – High-performance, scalable layer-1 blockchain  
 
-### Publishing the move package
+**Package Management:**  
+- pnpm  
 
-The move code for this template is located in the `move` directory. To publish
-it, you can enter the `move` directory, and publish it with the Sui CLI:
+---
+
+## 🚀 Getting Started
 
 ```bash
-cd move
-sui client publish --gas-budget 100000000 counter
-```
+# Clone the repository
+git clone https://github.com/EmmanuellDev/sui-nft-dapp.git
 
-In the output there will be an object with a `"packageId"` property. You'll want
-to save that package ID to the `src/constants.ts` file as `PACKAGE_ID`:
+# Navigate to the project folder
+cd sui-nft-dapp
 
-```ts
-export const TESTNET_COUNTER_PACKAGE_ID = "<YOUR_PACKAGE_ID>";
-```
-
-Now that we have published the move code, and update the package ID, we can
-start the app.
-
-## Starting your dApp
-
-To install dependencies you can run
-
-```bash
+# Install dependencies
 pnpm install
+
+# Start the development server
+pnpm run dev
+
 ```
 
-To start your dApp in development mode run
+# 📝 How It Works
 
-```bash
-pnpm dev
-```
+Connect Wallet – Users connect their Sui-compatible wallet.
 
-## Building
+Mint NFT – Create a unique NFT that is stored on-chain.
 
-To build your app for deployment you can run
+Burn NFT – Permanently destroy NFTs owned by the user.
 
-```bash
-pnpm build
-```
+Transfer NFT – Send NFTs to other wallet addresses securely.
+
+View Ownership – All NFTs are verifiable on-chain with immutable ownership records.
+
+# 📈 Learning Outcomes / Workshop Highlights
+
+Hands-on experience with Move language and smart contract development
+
+Understanding NFT lifecycle management (mint, burn, transfer)
+
+Working with Sui blockchain and modern dApp frontend tools
+
+Integrating wallets and on-chain data fetching in React apps
+
+# 📜 License
+
+© 2025 Sui NFT DApp. All rights reserved. Designed by Emmanuel Ramamoorthy.
+For support or contributions, contact emmanuelsk04@gmail.com or open an issue on GitHub.
